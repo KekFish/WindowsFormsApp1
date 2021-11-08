@@ -36,5 +36,25 @@ namespace WindowsFormsApp1
         {
 
         }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxTelefon_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxEmail_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
