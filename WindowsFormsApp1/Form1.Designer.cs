@@ -29,8 +29,6 @@ namespace WindowsFormsApp1
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.CheckBox checkBox1;
-            System.Windows.Forms.CheckBox checkBox2;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -51,34 +49,12 @@ namespace WindowsFormsApp1
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            checkBox1 = new System.Windows.Forms.CheckBox();
-            checkBox2 = new System.Windows.Forms.CheckBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).BeginInit();
             this.SuspendLayout();
-            // 
-            // checkBox1
-            // 
-            checkBox1.AutoSize = true;
-            checkBox1.BackColor = System.Drawing.Color.DarkGray;
-            checkBox1.ForeColor = System.Drawing.SystemColors.ControlLight;
-            checkBox1.Location = new System.Drawing.Point(676, 497);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new System.Drawing.Size(15, 14);
-            checkBox1.TabIndex = 16;
-            checkBox1.UseVisualStyleBackColor = false;
-            // 
-            // checkBox2
-            // 
-            checkBox2.AutoSize = true;
-            checkBox2.BackColor = System.Drawing.Color.DarkGray;
-            checkBox2.ForeColor = System.Drawing.SystemColors.ControlLight;
-            checkBox2.Location = new System.Drawing.Point(676, 517);
-            checkBox2.Name = "checkBox2";
-            checkBox2.Size = new System.Drawing.Size(15, 14);
-            checkBox2.TabIndex = 17;
-            checkBox2.UseVisualStyleBackColor = false;
             // 
             // label1
             // 
@@ -204,6 +180,7 @@ namespace WindowsFormsApp1
             this.textBoxilosc.ForeColor = System.Drawing.Color.Gray;
             this.textBoxilosc.Location = new System.Drawing.Point(697, 387);
             this.textBoxilosc.Name = "textBoxilosc";
+            this.textBoxilosc.ReadOnly = true;
             this.textBoxilosc.Size = new System.Drawing.Size(177, 26);
             this.textBoxilosc.TabIndex = 11;
             this.textBoxilosc.Text = "15 000 zł";
@@ -213,6 +190,7 @@ namespace WindowsFormsApp1
             this.textBoxokres.ForeColor = System.Drawing.Color.Gray;
             this.textBoxokres.Location = new System.Drawing.Point(697, 419);
             this.textBoxokres.Name = "textBoxokres";
+            this.textBoxokres.ReadOnly = true;
             this.textBoxokres.Size = new System.Drawing.Size(177, 26);
             this.textBoxokres.TabIndex = 12;
             this.textBoxokres.Text = "12 m-cy";
@@ -303,6 +281,27 @@ namespace WindowsFormsApp1
             this.button1.TabIndex = 20;
             this.button1.Text = "Wyślij !";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.BackColor = System.Drawing.Color.DarkGray;
+            this.checkBox1.Location = new System.Drawing.Point(676, 497);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(15, 14);
+            this.checkBox1.TabIndex = 21;
+            this.checkBox1.UseVisualStyleBackColor = false;
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.BackColor = System.Drawing.Color.DarkGray;
+            this.checkBox2.Location = new System.Drawing.Point(676, 518);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(15, 14);
+            this.checkBox2.TabIndex = 22;
+            this.checkBox2.UseVisualStyleBackColor = false;
             // 
             // Form1
             // 
@@ -310,11 +309,11 @@ namespace WindowsFormsApp1
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(996, 694);
+            this.Controls.Add(this.checkBox2);
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
-            this.Controls.Add(checkBox2);
-            this.Controls.Add(checkBox1);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.trackBar2);
             this.Controls.Add(this.trackBar1);
@@ -366,6 +365,8 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox checkBox2;
     }
 }
 

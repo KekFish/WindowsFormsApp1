@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace WindowsFormsApp1
 {
@@ -74,6 +75,39 @@ namespace WindowsFormsApp1
         private void trackBar2_Scroll(object sender, EventArgs e)
         {
             textBoxokres.Text = "" + trackBar2.Value + " m-cy";
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            const string Format = @"D:\test\{0}_{1}.txt";
+            string path = string.Format(Format, textBoxName.Text, textBoxForename.Text);
+            
+            string tekst = "Dane klienta : \r\n";
+            tekst += "Imię : " + textBoxName.Text + " Nazwisko : " + textBoxForename.Text + " \r\n";
+            tekst += "Dane Kontaktowe : \r\n";
+            tekst += "Telefon : " + textBoxTelefon.Text + " E-Mail : " + textBoxEmail.Text + " \r\n";
+            tekst += "Kwota Kredytu : " + textBoxilosc.Text + " Okres Kredytowania : " + textBoxokres.Text + " \r\n";
+            tekst += "Godzina Kontaktu : " + comboBox1.Text + " \r\n";
+            tekst += "Zgoda na przetwarzanie danych osobowych: " + ((checkBox1.Checked) ? "TAK" : "NIE") +"\r\n";
+            tekst += "Zgoda na przetwarzanie danych handlowych: " + ((checkBox2.Checked) ? "TAK" : "NIE") + "\r\n";
+            tekst += "Złożono : " + DateTime.Now.ToString("F") + " \r\n";
+
+            if (File.Exists(path))
+            {
+                string zmiana = "Kwota Kredytu : " + textBoxilosc.Text + " Okres Kredytowania : " + textBoxokres.Text + " \r\n";
+                zmiana += "Godzina Kontaktu : " + comboBox1.Text + " \r\n";
+                zmiana += "Złożono : " + DateTime.Now.ToString("F") + " \r\n";
+                File.AppendAllText(path, zmiana);
+            }
+            else
+            {
+                File.WriteAllText(path, tekst);
+            }
+
+
+
+            
+            
         }
     }
 }
