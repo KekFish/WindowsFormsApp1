@@ -15,6 +15,10 @@ namespace WindowsFormsApp1
         public Form1()
         {
             InitializeComponent();
+            trackBar1.Maximum = 100000;
+            trackBar1.Minimum = 1000;
+            trackBar2.Maximum = 72;
+            trackBar2.Minimum = 12;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -55,6 +59,21 @@ namespace WindowsFormsApp1
         private void label6_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void trackBar1_Scroll(object sender, EventArgs e)
+        {
+            textBoxilosc.Text = "" + trackBar1.Value + " zł";
+        }
+
+        private void trackBar2_Scroll(object sender, EventArgs e)
+        {
+            textBoxokres.Text = "" + trackBar2.Value + " m-cy";
         }
     }
 }

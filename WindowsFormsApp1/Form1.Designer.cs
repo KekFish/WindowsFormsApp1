@@ -29,9 +29,9 @@ namespace WindowsFormsApp1
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             System.Windows.Forms.CheckBox checkBox1;
             System.Windows.Forms.CheckBox checkBox2;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -43,8 +43,8 @@ namespace WindowsFormsApp1
             this.textBoxForename = new System.Windows.Forms.TextBox();
             this.textBoxEmail = new System.Windows.Forms.TextBox();
             this.textBoxTelefon = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBoxilosc = new System.Windows.Forms.TextBox();
+            this.textBoxokres = new System.Windows.Forms.TextBox();
             this.trackBar1 = new System.Windows.Forms.TrackBar();
             this.trackBar2 = new System.Windows.Forms.TrackBar();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -57,6 +57,28 @@ namespace WindowsFormsApp1
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).BeginInit();
             this.SuspendLayout();
+            // 
+            // checkBox1
+            // 
+            checkBox1.AutoSize = true;
+            checkBox1.BackColor = System.Drawing.Color.DarkGray;
+            checkBox1.ForeColor = System.Drawing.SystemColors.ControlLight;
+            checkBox1.Location = new System.Drawing.Point(676, 497);
+            checkBox1.Name = "checkBox1";
+            checkBox1.Size = new System.Drawing.Size(15, 14);
+            checkBox1.TabIndex = 16;
+            checkBox1.UseVisualStyleBackColor = false;
+            // 
+            // checkBox2
+            // 
+            checkBox2.AutoSize = true;
+            checkBox2.BackColor = System.Drawing.Color.DarkGray;
+            checkBox2.ForeColor = System.Drawing.SystemColors.ControlLight;
+            checkBox2.Location = new System.Drawing.Point(676, 517);
+            checkBox2.Name = "checkBox2";
+            checkBox2.Size = new System.Drawing.Size(15, 14);
+            checkBox2.TabIndex = 17;
+            checkBox2.UseVisualStyleBackColor = false;
             // 
             // label1
             // 
@@ -177,23 +199,23 @@ namespace WindowsFormsApp1
             this.textBoxTelefon.Text = "Telefon";
             this.textBoxTelefon.TextChanged += new System.EventHandler(this.textBoxTelefon_TextChanged);
             // 
-            // textBox1
+            // textBoxilosc
             // 
-            this.textBox1.ForeColor = System.Drawing.Color.Gray;
-            this.textBox1.Location = new System.Drawing.Point(697, 387);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(177, 26);
-            this.textBox1.TabIndex = 11;
-            this.textBox1.Text = "15 000 zł";
+            this.textBoxilosc.ForeColor = System.Drawing.Color.Gray;
+            this.textBoxilosc.Location = new System.Drawing.Point(697, 387);
+            this.textBoxilosc.Name = "textBoxilosc";
+            this.textBoxilosc.Size = new System.Drawing.Size(177, 26);
+            this.textBoxilosc.TabIndex = 11;
+            this.textBoxilosc.Text = "15 000 zł";
             // 
-            // textBox2
+            // textBoxokres
             // 
-            this.textBox2.ForeColor = System.Drawing.Color.Gray;
-            this.textBox2.Location = new System.Drawing.Point(697, 419);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(177, 26);
-            this.textBox2.TabIndex = 12;
-            this.textBox2.Text = "12 m-cy";
+            this.textBoxokres.ForeColor = System.Drawing.Color.Gray;
+            this.textBoxokres.Location = new System.Drawing.Point(697, 419);
+            this.textBoxokres.Name = "textBoxokres";
+            this.textBoxokres.Size = new System.Drawing.Size(177, 26);
+            this.textBoxokres.TabIndex = 12;
+            this.textBoxokres.Text = "12 m-cy";
             // 
             // trackBar1
             // 
@@ -202,6 +224,7 @@ namespace WindowsFormsApp1
             this.trackBar1.Name = "trackBar1";
             this.trackBar1.Size = new System.Drawing.Size(177, 45);
             this.trackBar1.TabIndex = 13;
+            this.trackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll);
             // 
             // trackBar2
             // 
@@ -210,38 +233,41 @@ namespace WindowsFormsApp1
             this.trackBar2.Name = "trackBar2";
             this.trackBar2.Size = new System.Drawing.Size(177, 45);
             this.trackBar2.TabIndex = 14;
+            this.trackBar2.Scroll += new System.EventHandler(this.trackBar2_Scroll);
             // 
             // comboBox1
             // 
+            this.comboBox1.AutoCompleteCustomSource.AddRange(new string[] {
+            "08:09",
+            "09:10",
+            "10:11",
+            "11:12",
+            "12:13",
+            "13:14",
+            "14:15",
+            "15:16",
+            "16:17",
+            "17:18"});
+            this.comboBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.comboBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "08:09",
+            "09:10",
+            "10:11",
+            "11:12",
+            "12:13",
+            "13:14",
+            "14:15",
+            "16:17",
+            "17:18"});
             this.comboBox1.Location = new System.Drawing.Point(514, 463);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(360, 28);
             this.comboBox1.TabIndex = 15;
             this.comboBox1.Text = "Preferowana pora Kontaktu";
-            // 
-            // checkBox1
-            // 
-            checkBox1.AutoSize = true;
-            checkBox1.BackColor = System.Drawing.Color.DarkGray;
-            checkBox1.ForeColor = System.Drawing.SystemColors.ControlLight;
-            checkBox1.Location = new System.Drawing.Point(676, 497);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new System.Drawing.Size(15, 14);
-            checkBox1.TabIndex = 16;
-            checkBox1.UseVisualStyleBackColor = false;
-            // 
-            // checkBox2
-            // 
-            checkBox2.AutoSize = true;
-            checkBox2.BackColor = System.Drawing.Color.DarkGray;
-            checkBox2.ForeColor = System.Drawing.SystemColors.ControlLight;
-            checkBox2.Location = new System.Drawing.Point(676, 517);
-            checkBox2.Name = "checkBox2";
-            checkBox2.Size = new System.Drawing.Size(15, 14);
-            checkBox2.TabIndex = 17;
-            checkBox2.UseVisualStyleBackColor = false;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label6
             // 
@@ -292,8 +318,8 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.trackBar2);
             this.Controls.Add(this.trackBar1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxokres);
+            this.Controls.Add(this.textBoxilosc);
             this.Controls.Add(this.textBoxTelefon);
             this.Controls.Add(this.textBoxEmail);
             this.Controls.Add(this.textBoxForename);
@@ -332,8 +358,8 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.TextBox textBoxForename;
         private System.Windows.Forms.TextBox textBoxEmail;
         private System.Windows.Forms.TextBox textBoxTelefon;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBoxilosc;
+        private System.Windows.Forms.TextBox textBoxokres;
         private System.Windows.Forms.TrackBar trackBar1;
         private System.Windows.Forms.TrackBar trackBar2;
         private System.Windows.Forms.ComboBox comboBox1;
